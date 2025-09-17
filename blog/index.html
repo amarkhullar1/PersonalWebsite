@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Amar Khullar</title>
+  <meta name="description" content="Blog by Amar Khullar on data engineering, ML, and building reliable systems.">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/"><span class="accent">A</span>mar Khullar</a>
+    <nav class="nav">
+      <a href="/index.html#about">About</a>
+      <a href="/projects.html">Projects</a>
+      <a class="active" href="/blog/index.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <span class="sun">☀️</span>
+      <span class="moon">🌙</span>
+    </button>
+  </header>
+
+  <main class="section">
+    <h1>Blog</h1>
+    <p class="lead">Notes on data quality, system design, and practical ML — grounded in work across NHS platforms.</p>
+
+    <div class="post-list">
+      <article class="post-item">
+        <h2><a href="/blog/posts/massachusetts-gerrymandering-mcmc.html">Statistics, Politics, Law and Gerrymandering</a></h2>
+        <p class="excerpt">My MSc dissertation: using MCMC ensembles (Flip vs ReCom) to assess partisan bias in Massachusetts maps — methods, metrics, and what the results actually mean.</p>
+        <time datetime="2025-09-17">September 17, 2025</time>
+      </article>
+
+      <article class="post-item">
+        <h2><a href="/blog/posts/clean-data-practicalities.html">The Practicalities of Clean Data</a></h2>
+        <p class="excerpt">How Autofix added 1.5M UPRNs to PDS and 50k+/month thereafter, saving £200k+/year — and the checks that made it safe.</p>
+        <time datetime="2025-09-17">September 17, 2025</time>
+      </article>
+
+      <article class="post-item">
+        <h2><a href="/blog/posts/fhir-leaky-bucket.html">Implementing a Leaky Bucket for FHIR</a></h2>
+        <p class="excerpt">Rate‑limiting PDS FHIR calls with a DynamoDB‑backed bucket so ingestion stays steady and upstream stays happy.</p>
+        <time datetime="2025-09-10">September 10, 2025</time>
+      </article>
+
+      <article class="post-item">
+        <h2><a href="/blog/posts/shipping-to-legacy-spine.html">Shipping to Legacy Systems: Notes from NHS Spine II</a></h2>
+        <p class="excerpt">Practical tactics: find seams, flag safely, test end‑to‑end, and make observability part of the feature.</p>
+        <time datetime="2025-09-05">September 5, 2025</time>
+      </article>
+
+      <article class="post-item">
+        <h2><a href="/blog/posts/graph-relationship-network.html">Modeling a National Relationship Network</a></h2>
+        <p class="excerpt">Neptune data model choices, steady GRO ingestion, and a RelatedPerson FHIR API aligned with consumers.</p>
+        <time datetime="2025-08-12">August 12, 2025</time>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Amar Khullar. All rights reserved.</p>
+  </footer>
+</body>
+</html>

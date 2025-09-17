@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Practicalities of Clean Data — Amar Khullar</title>
+  <meta name="description" content="Checks, feedback loops, and service boundaries that actually keep data clean in production.">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/"><span class="accent">A</span>mar Khullar</a>
+    <nav class="nav">
+      <a href="/index.html#about">About</a>
+      <a href="/projects.html">Projects</a>
+      <a class="active" href="/blog/index.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <span class="sun">☀️</span>
+      <span class="moon">🌙</span>
+    </button>
+  </header>
+
+  <main class="section">
+    <article class="post">
+      <h1>The Practicalities of Clean Data</h1>
+      <p class="post-meta"><time datetime="2025-09-17">September 17, 2025</time> · 6 min read</p>
+      <p>In production systems, data quality is a living, breathing concern. On the NHS Address Quality Service (Autofix), we enriched PDS addresses with UPRNs by integrating OS Places and NHS Spine II. That service has already added <strong>1.5M</strong> UPRNs and continues to apply <strong>50,000+/month</strong>, saving over <strong>£200,000/year</strong> in avoided letters. Here are a few pragmatic patterns that made that possible:</p>
+      <h2>1) Checks that matter</h2>
+      <p>Focus on checks that prevent downstream breakage or visible user impact. Tie every check to an owner and an action. In Autofix, we validated OS Places responses and ensured we didn’t regress existing PDS workflows via integration tests before rollout.</p>
+      <h2>2) Feedback loops</h2>
+      <p>Surface quality metrics and create tight loops: detection → alert → remediation → learning. We tracked match rates, enrichment failures and latency through CloudWatch dashboards and set thresholds that triggered investigation playbooks.</p>
+      <h2>3) Boundary definitions</h2>
+      <p>Clear service and domain boundaries reduce ambiguity and help teams own their data contracts. The enrichment lived behind a RESTful API (API Gateway + Lambda + SQS), while Spine II owned core workflows; contracts were captured via OpenAPI and tested end‑to‑end.</p>
+      <h2>4) Test in the seams</h2>
+      <p>When integrating with legacy systems, test in the seams: we used integration and performance tests to confirm we didn’t disrupt existing flows and that enrichment kept up during peaks.</p>
+      <p><em>Stack:</em> AWS API Gateway, Lambda, SQS, Glue; Python; Terraform; NHS Spine II integration. Outcomes: cleaner addresses, faster letters, and measurable savings.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Amar Khullar. All rights reserved.</p>
+  </footer>
+</body>
+</html>

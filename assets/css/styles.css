@@ -1,0 +1,105 @@
+/* Base Theme */
+:root {
+  --bg: #0b0c10;
+  --text: #e6e6e6;
+  --muted: #b8c0cc;
+  --card: #111218;
+  --border: #1f2230;
+  --accent: #5eead4; /* teal */
+  --accent-2: #f43f5e; /* rose */
+  --accent-3: #6366f1; /* indigo */
+  --shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --shadow: 0 8px 24px rgba(2,6,23,0.08);
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(99,102,241,0.12), transparent 60%),
+              radial-gradient(1000px 600px at 110% 10%, rgba(94,234,212,0.10), transparent 60%),
+              var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  backdrop-filter: saturate(180%) blur(12px);
+  background: color-mix(in oklab, var(--bg) 82%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+.logo { font-weight: 700; text-decoration: none; color: var(--text); letter-spacing: 0.3px; }
+.logo .accent { color: var(--accent-3); }
+.nav { display: flex; gap: 1rem; }
+.nav a { color: var(--muted); text-decoration: none; font-weight: 500; }
+.nav a:hover, .nav a.active { color: var(--text); }
+.theme-toggle { border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: 999px; padding: 6px 10px; box-shadow: var(--shadow); cursor: pointer; }
+.theme-toggle .sun { display: none; }
+:root[data-theme="light"] .theme-toggle .sun { display: inline; }
+:root[data-theme="light"] .theme-toggle .moon { display: none; }
+
+/* Layout */
+.section { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.25rem; }
+.lead { color: var(--muted); font-size: 1.075rem; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem; align-items: center; padding: 3rem 1.25rem 2rem; max-width: 1100px; margin: 0 auto; }
+.hero-content h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 0.75rem; }
+.cta-row { display: flex; gap: 0.75rem; margin: 1rem 0 0.5rem; }
+.btn { display: inline-block; padding: 0.7rem 1rem; border-radius: 10px; border: 1px solid var(--border); text-decoration: none; font-weight: 600; }
+.btn.primary { background: linear-gradient(135deg, var(--accent-3), var(--accent)); color: #081018; border: none; box-shadow: var(--shadow); }
+.btn.ghost { background: transparent; color: var(--text); }
+.socials { display: flex; gap: 1rem; margin-top: 0.75rem; }
+.social { color: var(--muted); text-decoration: none; }
+.social:hover { color: var(--text); }
+.hero-accent { height: 260px; border-radius: 18px; background: linear-gradient(135deg, color-mix(in oklab, var(--accent-3) 55%, var(--bg)), color-mix(in oklab, var(--accent) 55%, var(--bg))); filter: blur(22px); opacity: 0.5; }
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; box-shadow: var(--shadow); }
+.card-link { display: inline-block; margin-top: 0.5rem; color: var(--accent); text-decoration: none; font-weight: 600; }
+.card-link:hover { text-decoration: underline; }
+
+/* Projects */
+.project { margin: 1.5rem 0; }
+.meta { list-style: none; padding: 0; margin: 0.5rem 0 0; display: flex; flex-wrap: wrap; gap: 1rem; color: var(--muted); }
+
+/* Blog */
+.post-list { display: grid; gap: 1rem; }
+.post-item h2 { margin: 0; }
+.post-item .excerpt { color: var(--muted); }
+.post { max-width: 800px; margin: 0 auto; }
+.post .post-meta { color: var(--muted); }
+
+/* Contact */
+.contact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.contact-card { text-decoration: none; color: var(--text); }
+
+/* Footer */
+.site-footer { padding: 2rem 1.25rem; border-top: 1px solid var(--border); text-align: center; color: var(--muted); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-accent { order: -1; height: 180px; }
+}

@@ -1,0 +1,180 @@
+ark1999@hotmail.co.uk  | W9, London | www.linkedin.com/in/amar-khullar-45941a169/ 
+
+Amar Khullar 
+
+Personal profile 
+
+I am an experienced software engineer, who enjoys fast paced and collaborative work environments that allow me to utilise my problem 
+solving, teamwork and engineering skills. The last 3+ years at Netcompany has provided me with an array of experiences: building complex 
+cloud architectures  (AWS, Terraform, Python), back-end engineering legacy NHS systems, unearthing valuable insights from large datasets 
+using Databricks, and navigating rainbow teams through complex problems - collaborating with both colleagues and stakeholders. I am keen 
+to expand  my skillset further through new experiences and technologies. 
+
+Employment experience 
+
+                    January 2023  – Present 
+Netcompany – Senior Software Engineer 
+NHS Relationship Network (May 24 – Present): Leading development to create: a relationship network datastore for NHS PDS, an ingestion 
+pipeline to add relationships to the network, and a RESTful FHIR API to expose relationships to consumers; with the goal to enable 4.5M+ 
+children plus 350K new children per  year to receive medical care by proxy via the NHS app. 
+
+•  Designed and implemented an ETL data ingestion pipeline (S3, Lambdas, SQS, DynamoDB, Step Functions) to add relationship data 
+to our  Neptune datastore via GRO birth registrations, utilising a Leaky Bucket algorithm to rate limit with the PDS FHIR API. 
+Currently  creating the Related Persons FHIR API to expose relationships to our consumers; Swagger/OpenAPI for specifications. 
+
+• 
+•  Writing terraform and deploying CodePipeline, Lambdas, DynamoDB & more including writing least privilege IAM policies , across 
+
+dev and PTL accounts. 
+Stack: Python  – Pydantic, Open  API, Gherkin tests; AWS – Lambda, Step functions, SQS, S3, API Gateway, DynamoDB, Neptune. 
+
+• 
+•  Weekly discussions with stakeholders to align and manage scope, user research with consumers to gather requirements. 
+•  Working in an Agile team – running stand-ups, sprint reviews, refinements, demos and more. 
+
+NHS Autofix (Oct 23 – May 24): Creating the Address Quality Service API in AWS as well as integration to NHS Spine II with the purpose of 
+adding UPRN’s to the address field in NHS PDS, through interfacing with the OSPlaces API; saving the NHS £200,000+ per year. 
+
+• 
+
+• 
+
+Created a RESTful FHIR API to enrich NHS PDS address data quality; using AWS API Gateway, Glue, Lambdas and SQS utilising 
+Infrastructure as Code (Terraform) and Python. 
+Spine integration work was Python development in a complex legacy system (NHS Spine II) to call the API and handle the response 
+within core existing workflow; using integration tests & performance tests to ensure flow wasn’t disrupted. Stack: Linux, Python, 
+NGINX, Jenkins, PyTest. 
+
+•  Delivered a system that has added 1.5M UPRNs to PDS and applies 50,000 more each month, saving the NHS over £200,000 per 
+
+year in vaccination letters that we don’t need to send. 
+
+NHS DQIP (Jan 23 – Oct 23): Leading a data science team to discover pain points and automate manual processes. We implemented an ML 
+tool to save 60s+ per case for back-office staff, saving over 4,000 hours of work per year; freeing up resources & reducing NHS backlog. 
+
+• 
+
+Built a decision tree classification machine learning model in Python to identify duplicate records, involving: Data extraction, 
+cleansing, feature selection, modelling and evaluation. Context was learnt from capturing assumptions during workshops. 
+•  Data science and engineering work was done using Apache Databricks – writing SQL queries, PySpark user-defined functions, and 
+
+utilising libraries such as NumPy, Pandas, SciPy, and SKLearn to ETL data gathered from several large NHS datasets. 
+
+•  Delivered a classification model to save NBO staff over a minute per duplicate work item case, saving the NHS £80,000+/yr.  
+
+Netcompany – Software Engineer: 
+
+    October 2021  – December 2022 
+
+•  NHS PDS (Dec 21 – Dec 22): Full stack developer: Working in an agile team to implement new features for NHS Spine II. OOP 
+
+Python  web development  on Linux OS: stack involved Python  (Flask), Ajax, Jinja2, HTML, CSS, JS (jQuery); DevOps tools used 
+include Jenkins, Splunk,  Jira & Git. Writing unit tests for both  back-end and front-end  features (PyTest and Selenium) as well as end 
+to end integration tests (XML).  
+Bench (Oct 21 – Dec 21): Worked on bids – drafting and reviewing project bids (using DOS framework) to obtain new public sector 
+projects. Our team won 100% of our proposals, with £10m+ in bids progressed to the next stage. 
+
+• 
+
+Spookfish Innovations – Computer Vision Engineer Intern, Bristol: 
+
+          June 2020 – September 2020 
+
+• 
+• 
+
+Python  and C++ programming to implement a ML computer vision solution for the ‘Harlequin’ and ‘Microps’ products. 
+Experience gained – C++, OpenCV, implementing ML models to real problems, understanding of the computer vision sector. 
+
+Barbal (StandardsRepo) – Software Engineering Intern, Bristol:       
+
+     June – September 2019 
+
+• 
+• 
+
+Full-stack programming in an agile team using: GoLang, SQL, JavaScript, Template (HTML), CSS to develop a web application. 
+Experience gained – Git, Agile, collaborative software engineering - code reviews, pair programming, sprint planning etc. 
+
+Education and certifications 
+
+Certifications: AWS Specialty Machine Learning (MLS-C01), AWS Developer Associate (DVA-C02), AWS cloud practitioner, Azure 
+Fundamentals (AZ-900), Azure Data Fundamentals (DP-900), Azure AI Fundamentals (AI-900). 
+
+MSc Data Science, University of Leeds - Distinction:          
+
+            September 2020 – September 2021 
+
+•  Dissertation – I created and analysed my own custom dataset with the purpose of determining whether there was gerrymandering 
+
+in Massachusetts in the 2020 elections, using multiple statistical methods, including Markov Chain Monte Carlo. 
+
+    
+ 
+ 
+ 
+ 
+  
+ 
+   
+ 
+ 
+ 
+ 
+           
+• 
+
+• 
+
+Programming – Neural networks and reinforcement learning from scratch in Python, Convolutional NNs  for image classification, 
+Natural language processing, Image caption generation with LLMs (CNNs and RNNs), data analysis and statistics (multiple linear & 
+logistic regression) using R with LaTeX reports. 
+Theory  – Data science, Machine learning, Statistical theory, Statistical learning, Artificial intelligence, Data mining and more. 
+
+BSc Computer Science, University of Bristol – Upper Second Class Honours:                September 2017 – June 2020 
+
+• 
+• 
+
+Programming – Implemented projects using imperative, object-oriented, functional and concurrent techniques. 
+Theory  – Mathematics, Data structures, Algorithms, Computer architecture, Theory of computation, Security, Machine learning, 
+Concurrent  computing, Computer  Vision, Networking, Language Engineering and more. 
+
+•  Dissertation group project  – Developed a virtual reality game using Unity and C#. 
+• 
+• 
+
+Solo and group projects in Java, C, C++, xC, Haskell and Python using Agile workflow and Git. 
+
+Societies: 180 Degrees Consulting - a society in Bristol that provides pro bono consulting services to charities; I helped on 
+consulting projects with social media data visualization for them, I was also an active organizer and member of Poker Society. 
+
+Tanglin Trust School, Singapore:  
+
+         September 2007 – June 2017 
+
+A Level Mathematics, Physics, Computer Science, EPQ (A*, A*, A, A respectively). 
+Y13 Project – object-oriented  PHP website, designed to matchmake basketball teams and organize games. 
+
+• 
+• 
+•  GCSE’s 6 A*s 2 A’s 2 B’s. 
+
+Other skills and interests 
+
+Skills and interests 
+
+• 
+
+• 
+
+I am proficient in Adobe Photoshop,  Sony Vegas, Microsoft Office Suite (including VBA), I’ve uploaded compilation videos to 
+YouTube  and accrued 500,000+ views. 
+I enjoy playing golf, football, poker and keeping active by running  and going to the gym. 
+
+ 
+ 
+ 
+ 
+ 
+

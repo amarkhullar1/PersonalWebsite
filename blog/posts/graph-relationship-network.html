@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modeling a National Relationship Network — Amar Khullar</title>
+  <meta name="description" content="Thoughts on graph data modeling, traversal performance, and query semantics at scale.">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/"><span class="accent">A</span>mar Khullar</a>
+    <nav class="nav">
+      <a href="/index.html#about">About</a>
+      <a href="/projects.html">Projects</a>
+      <a class="active" href="/blog/index.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <span class="sun">☀️</span>
+      <span class="moon">🌙</span>
+    </button>
+  </header>
+
+  <main class="section">
+    <article class="post">
+      <h1>Modeling a National Relationship Network</h1>
+      <p class="post-meta"><time datetime="2025-08-12">August 12, 2025</time> · 6 min read</p>
+      <p>Graph data models unlock expressive queries over complex, real-world relationships. On the NHS Relationship Network, we ingest relationships from GRO birth registrations and expose them via a FHIR API to enable proxy care access in the NHS App for <strong>4.5M+ children</strong>.</p>
+      <h2>Data model choices</h2>
+      <p>We modelled persons and relationships in Amazon Neptune with explicit edge types and directionality to support auditability and clear traversal semantics. IDs and constraints align with PDS and FHIR resource identifiers.</p>
+      <h2>Ingestion and rate limiting</h2>
+      <p>An AWS-native ETL (S3 → Lambda → Step Functions → Neptune) processes GRO registrations. We implemented a <em>leaky bucket</em> rate limiter when calling the PDS FHIR API to respect upstream limits while keeping ingestion steady.</p>
+      <h2>Traversal performance</h2>
+      <p>We shaped traversals with indexes and kept fan-out bounded for common queries (e.g., guardians → dependents). Batch writes and controlled commit sizes helped maintain write performance.</p>
+      <h2>API and alignment</h2>
+      <p>A RelatedPerson FHIR API exposes relationships with clear guarantees. We used Swagger/OpenAPI to align with consumers and ran regular stakeholder reviews to keep scope crisp.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Amar Khullar. All rights reserved.</p>
+  </footer>
+</body>
+</html>

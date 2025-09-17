@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistics, Politics, Law and Gerrymandering — Amar Khullar</title>
+  <meta name="description" content="A practitioner-friendly summary of my MSc dissertation: using Markov Chain Monte Carlo to assess partisan bias in Massachusetts redistricting.">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/"><span class="accent">A</span>mar Khullar</a>
+    <nav class="nav">
+      <a href="/index.html#about">About</a>
+      <a href="/projects.html">Projects</a>
+      <a class="active" href="/blog/index.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <span class="sun">☀️</span>
+      <span class="moon">🌙</span>
+    </button>
+  </header>
+
+  <main class="section">
+    <article class="post">
+      <h1>Statistics, Politics, Law and Gerrymandering</h1>
+      <p class="post-meta"><time datetime="2025-09-17">September 17, 2025</time> · 7 min read</p>
+      <p>This post summarises my MSc dissertation (University of Leeds, 2021) on detecting partisan bias in electoral maps using <strong>Markov Chain Monte Carlo (MCMC)</strong>, applied to <strong>Massachusetts</strong>. It blends statistics with legal context and shows how computational sampling can inform fairness debates.</p>
+
+      <h2>Why MCMC for redistricting?</h2>
+      <p>We rarely have access to the full space of all valid districting plans, so judging whether a given plan is an outlier is difficult. MCMC lets us <em>sample</em> from the space of valid plans and compare the plan in use against an ensemble using metrics like efficiency gap and partisan symmetry.</p>
+
+      <h2>Data set and constraints</h2>
+      <ul>
+        <li>Built a Massachusetts dual graph (municipalities as nodes; adjacencies as edges).</li>
+        <li>Validity constraints: equal population (thresholded), contiguity, and limited splits.</li>
+        <li>Created and merged multiple sources (including 2020 presidential voting) into a single analytical data set.</li>
+      </ul>
+
+      <h2>Two proposal functions</h2>
+      <h3>Boundary Flip</h3>
+      <p>Iteratively flips a boundary node from one district to a neighbour, preserving validity constraints. Easy to explain but tends to produce long, snaky districts; mixes slowly and can struggle with contiguity.</p>
+      <h3>Recombination ("ReCom")</h3>
+      <p>Samples a pair of adjacent districts, builds an induced subgraph, draws a random spanning tree, and cuts an edge to form two new districts that meet constraints. Implies contiguity and produces more compact plans. Each step is heavier, but ensembles diversify faster.</p>
+
+      <h2>Metrics</h2>
+      <ul>
+        <li><strong>Efficiency gap</strong> (wasted votes),</li>
+        <li><strong>Partisan symmetry</strong>,</li>
+        <li><strong>Compactness</strong> proxies (e.g., cut edges, boundary length).</li>
+      </ul>
+
+      <h2>Results</h2>
+      <ul>
+        <li>On a <strong>35% adjustment level</strong>, the ensemble suggested the <strong>original map exhibits some Democratic bias</strong>.</li>
+        <li>Across other adjustment levels, evidence was not consistently significant.</li>
+        <li>ReCom produced <em>more varied and compact</em> plans with quicker ensemble diversification; Boundary Flip required far more iterations to explore the space.</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p><strong>Is Massachusetts gerrymandered?</strong> Based on the ensembles generated, I did <em>not</em> find concrete evidence that would meet a robust legal standard. Some bias appears at one adjustment level, but strong outlier evidence (e.g., more biased than 95% of sampled plans across conditions) wasn’t met given the sample sizes.</p>
+
+      <h2>Further work</h2>
+      <ul>
+        <li>Scale up sample sizes (e.g., 10k+ ReCom, 1B Boundary Flip) for tighter confidence.</li>
+        <li>Finer-grained adjustment levels and sensitivity analysis.</li>
+        <li>Port the pipeline to other states; the dual-graph methodology generalises.</li>
+      </ul>
+
+      <p>You can <a href="/dissertation.pdf" download="Khullar-Amar-Dissertation-Gerrymandering-MCMC.pdf">download the full dissertation here</a>.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Amar Khullar. All rights reserved.</p>
+  </footer>
+</body>
+</html>

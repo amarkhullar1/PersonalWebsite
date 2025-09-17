@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Amar Khullar</title>
+  <meta name="description" content="Selected projects by Amar Khullar: duplicate patient classification, Spine features, Address Quality Service, and a UK Relationship Network.">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/"><span class="accent">A</span>mar Khullar</a>
+    <nav class="nav">
+      <a href="/index.html#about">About</a>
+      <a class="active" href="/projects.html">Projects</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <span class="sun">☀️</span>
+      <span class="moon">🌙</span>
+    </button>
+  </header>
+
+  <main class="section">
+    <h1>Projects</h1>
+    <p class="lead">A selection of work across machine learning, data quality, and large-scale backend services. Roles at Netcompany delivering for the NHS.</p>
+
+    <div class="project" id="relationship-network">
+      <h2>Relationship Network (NHS PDS)</h2>
+      <p><strong>May 2024 – Present</strong> — Leading development of a relationship network datastore for NHS PDS and exposing relationships via a RESTful FHIR API to enable proxy care access in the NHS App for <strong>4.5M+ children</strong> (plus <strong>350K</strong> new children per year).</p>
+      <ul class="meta">
+        <li><strong>Stack:</strong> AWS (Lambda, Step Functions, SQS, S3, API Gateway, DynamoDB, Neptune), Python (Pydantic, OpenAPI), Terraform, Swagger/OpenAPI</li>
+        <li><strong>Highlights:</strong> Designed ETL ingestion from GRO birth registrations into Neptune; implemented a <em>leaky bucket</em> rate limiter for PDS FHIR API; building the RelatedPerson FHIR API</li>
+        <li><strong>Role:</strong> Senior Software Engineer — design, implementation, stakeholder alignment, agile ceremonies</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="project" id="address-quality">
+      <h2>Address Quality Service (Autofix)</h2>
+      <p><strong>Oct 2023 – May 2024</strong> — Created an API in AWS to enrich NHS PDS address data with UPRNs by integrating with OS Places and NHS Spine II. Deployed via IaC and integrated into core Spine workflows safely.</p>
+      <ul class="meta">
+        <li><strong>Stack:</strong> AWS (API Gateway, Glue, Lambda, SQS), Python, Terraform; Integration with NHS Spine II</li>
+        <li><strong>Impact:</strong> Added <strong>1.5M</strong> UPRNs and continues to apply <strong>50,000+/month</strong>; saving the NHS <strong>£200,000+/year</strong> in avoided letters</li>
+        <li><strong>Testing:</strong> Integration and performance tests to ensure zero disruption to existing workflows</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="project" id="duplicate-patients">
+      <h2>Duplicate Patient Classification (DQIP)</h2>
+      <p><strong>Jan 2023 – Oct 2023</strong> — Led a data science initiative to automate duplicate record triage for back-office staff, delivering a classification model that saves <strong>60+ seconds</strong> per case and <strong>4,000+ hours/year</strong>.</p>
+      <ul class="meta">
+        <li><strong>Stack:</strong> Databricks (SQL, PySpark UDFs), Python (NumPy, Pandas, SciPy, scikit-learn)</li>
+        <li><strong>Work:</strong> Data extraction and cleansing, feature engineering, modeling and evaluation; workshops to capture assumptions</li>
+        <li><strong>Impact:</strong> Estimated savings of <strong>£80,000+/year</strong>; improved data integrity and reduced backlog</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="project" id="spine-features">
+      <h2>NHS Spine II — Feature Development</h2>
+      <p><strong>Dec 2021 – Dec 2022</strong> — Full‑stack development on a mission‑critical legacy system. Shipped features with end‑to‑end tests and close collaboration with platform teams.</p>
+      <ul class="meta">
+        <li><strong>Stack:</strong> Python (Flask), Jinja2, HTML/CSS/JS (jQuery), Linux; Jenkins, Splunk; tests with PyTest, Selenium; E2E via XML</li>
+        <li><strong>Practice:</strong> Agile ceremonies, code reviews, integration/performance testing</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Amar Khullar. All rights reserved.</p>
+  </footer>
+</body>
+</html>
