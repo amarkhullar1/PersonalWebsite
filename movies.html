@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movies — Ratings by Amar Khullar</title>
+  <meta name="description" content="Personal movie ratings and brief notes by Amar Khullar.">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script defer src="/assets/js/script.js"></script>
+  <style>
+    .movies { max-width: 900px; margin: 0 auto; }
+    .movie { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1rem; border:1px solid var(--border); background:var(--card); border-radius:14px; box-shadow: var(--shadow); }
+    .movie h3 { margin: 0 0 0.25rem; }
+    .movie .meta { color: var(--muted); margin: 0 0 0.25rem; }
+    .movie .notes { color: var(--text); margin: 0; }
+    .stars { letter-spacing: 2px; font-size: 1.1rem; }
+    .stars .on { color: #f59e0b; }
+    .movies-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .legend { color: var(--muted); font-size: 0.95rem; margin: 0.5rem 0 1.5rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/"><span class="accent">A</span>mar Khullar</a>
+    <nav class="nav">
+      <a href="/index.html#about">About</a>
+      <a href="/projects.html">Professional Projects</a>
+      <a href="/personal-projects.html">Personal Projects</a>
+      <a href="/movies.html" class="active">Movies</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <span class="sun">☀️</span>
+      <span class="moon">🌙</span>
+    </button>
+  </header>
+
+  <main class="section movies">
+    <h1>Movies</h1>
+    <p class="lead">Quick personal ratings with one‑liner notes. Stars are out of 5.</p>
+    <p class="legend">Legend: <span class="stars"><span class="on">★</span><span class="on">★</span><span class="on">★</span><span class="on">★</span><span>★</span></span> = 4/5</p>
+
+    <div class="movies-grid">
+      <article class="movie">
+        <div>
+          <h3>Dune: Part Two (2024)</h3>
+          <p class="meta">Dir. Denis Villeneuve · Sci‑Fi</p>
+          <p class="notes">Spectacle with weight. Massive scale, sharp sound design, and disciplined pacing.</p>
+        </div>
+        <div class="stars" aria-label="Rating: 4.5 out of 5">
+          <span class="on">★</span><span class="on">★</span><span class="on">★</span><span class="on">★</span><span class="on">☆</span>
+        </div>
+      </article>
+
+      <article class="movie">
+        <div>
+          <h3>Oppenheimer (2023)</h3>
+          <p class="meta">Dir. Christopher Nolan · Drama</p>
+          <p class="notes">Dense but gripping. Great sound, superb editing, and a sharp moral center.</p>
+        </div>
+        <div class="stars" aria-label="Rating: 4 out of 5">
+          <span class="on">★</span><span class="on">★</span><span class="on">★</span><span class="on">★</span><span>★</span>
+        </div>
+      </article>
+
+      <article class="movie">
+        <div>
+          <h3>Thief (1981)</h3>
+          <p class="meta">Dir. Michael Mann · Crime</p>
+          <p class="notes">Austere heist with neon mood. Tangerine Dream score goes hard.</p>
+        </div>
+        <div class="stars" aria-label="Rating: 4 out of 5">
+          <span class="on">★</span><span class="on">★</span><span class="on">★</span><span class="on">★</span><span>★</span>
+        </div>
+      </article>
+    </div>
+
+    <p class="legend">Want to add your own list? Send me titles, year, short note, and a 1–5 rating and I’ll update this page.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Amar Khullar. All rights reserved.</p>
+  </footer>
+</body>
+</html>
