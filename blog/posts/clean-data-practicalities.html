@@ -14,7 +14,8 @@
     <a class="logo" href="/"><span class="accent">A</span>mar Khullar</a>
     <nav class="nav">
       <a href="/index.html#about">About</a>
-      <a href="/projects.html">Projects</a>
+      <a href="/projects.html">Professional Projects</a>
+      <a href="/personal-projects.html">Personal Projects</a>
       <a class="active" href="/blog/index.html">Blog</a>
       <a href="/contact.html">Contact</a>
     </nav>
@@ -28,7 +29,7 @@
     <article class="post">
       <h1>The Practicalities of Clean Data</h1>
       <p class="post-meta"><time datetime="2025-09-17">September 17, 2025</time> · 6 min read</p>
-      <p>In production systems, data quality is a living, breathing concern. On the NHS Address Quality Service (Autofix), we enriched PDS addresses with UPRNs by integrating OS Places and NHS Spine II. That service has already added <strong>1.5M</strong> UPRNs and continues to apply <strong>50,000+/month</strong>, saving over <strong>£200,000/year</strong> in avoided letters. Here are a few pragmatic patterns that made that possible:</p>
+      <p>In production systems, data quality is a living, breathing concern. On the NHS Address Quality Service (Autofix), we enriched PDS addresses with UPRNs by integrating OS Places and NHS Spine II. That service has already added <strong>40M</strong> UPRNs and continues to apply <strong>50,000+/month</strong>, saving over <strong>£200,000/year</strong> in avoided letters. Here are a few pragmatic patterns that made that possible:</p>
       <h2>1) Checks that matter</h2>
       <p>Focus on checks that prevent downstream breakage or visible user impact. Tie every check to an owner and an action. In Autofix, we validated OS Places responses and ensured we didn’t regress existing PDS workflows via integration tests before rollout.</p>
       <h2>2) Feedback loops</h2>
