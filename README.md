@@ -1,6 +1,6 @@
 # Amar Khullar — Personal Website
 
-Static website to showcase my work and projects.
+Static (for now) website to showcase my work and projects.
 
 ## Structure
 
