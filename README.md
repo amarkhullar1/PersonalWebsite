@@ -1,6 +1,6 @@
 # Amar Khullar — Personal Website
 
-A fast, modern, and responsive static website for Amar Khullar, a data-focused software engineer.
+Static website to showcase my work and projects.
 
 ## Structure
 
@@ -33,4 +33,4 @@ Then open http://localhost:8080 in your browser.
 
 ## Deployment
 
-Host anywhere that serves static files: GitHub Pages, Netlify, Vercel, Cloudflare Pages.
+Deployed via Vercel to amarkhullar.com.
